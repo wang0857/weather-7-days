@@ -46,7 +46,6 @@ body {
     grid-template-columns: 1fr;
     gap: $xlg;
     margin-bottom: 3em;
-    width: 100%;
 }
 
 @media screen and (min-width: 768px) {
@@ -220,5 +219,27 @@ body {
         justify-content: center;
         align-items: center;
         height: 370px;
+
+        &-lineChart {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 290px;
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .tempForecast-container {
+        width: 100%;
+        max-width: 267px;
+        overflow-x: scroll;
+        justify-content: flex-start;
+
+        &-lineChart {
+            justify-content: flex-start;
+            min-width: 580px;
+        }
     }
 }

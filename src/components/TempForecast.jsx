@@ -32,7 +32,7 @@ function TempForecast({location, darkMode}) {
     const [sevenDays, setSevenDays] = useState([])
     const [iconObjs, setIconObjs] = useState([])
     const [dayIcons, setDayIcons] = useState([])
-    
+    const [width, setWidth] = useState('')
     
     // Line Chart
     
@@ -72,7 +72,8 @@ function TempForecast({location, darkMode}) {
             tension: 0.4,
             fill: true,
             borderWidth: 1,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            // responsive: true
         }]
     }
 
@@ -147,16 +148,21 @@ function TempForecast({location, darkMode}) {
             )
         )
     }, [sevenWeathers])
+
+    useEffect(() => {
+        const forecastContainer = document.querySelector('.tempForecast-container')
+        setWidth(forecastContainer.offsetWidth)
+    }, [])
     
 
     return (
         <div className="tempForecast-container">
-            <Line
-                data={data}
-                options={options}
-                height={'200%'}
-                min-width={'100%'}
-            />
+            <div className="tempForecast-container-lineChart">
+                <Line
+                    data={data}
+                    options={options}
+                />
+            </div>
         </div>
     )
 }
