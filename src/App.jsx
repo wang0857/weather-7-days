@@ -9,7 +9,7 @@ import TempForecast from "./components/TempForecast";
 function App() {
   // Get user appearance for default dark mode setting
   const [darkMode, setDarkMode] = useState(
-    window.matchMedia("(prefers-color-scheme: dark)").matches
+    window.matchMedia("(prefers-color-scheme: dark)").matches || false
   )
   const [location, setLocation] = useState({});
 
