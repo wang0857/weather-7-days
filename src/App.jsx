@@ -27,14 +27,7 @@ function App() {
     if (darkMode) {
       document.body.classList.add('dark')
     } else {
-      
-      if (document.body.classList.contains('dark')) {
-        document.body.classList.remove('dark')  
-      } else {
-        return
-      }
-
-      document.body.classList.toggle('dark')
+      document.body.classList.remove('dark')
     }
   }, [darkMode])
 
