@@ -1,0 +1,56 @@
+@import './variables';
+
+
+body.dark {
+
+    /* Background Setting */
+    background-image: linear-gradient($secondary-color-dark, $tertiary-color-dark);
+
+    /* Font Color */
+    & > * {
+        color: $white-dm;
+    }
+
+    /* Search Bar */
+    .search-bar {
+        input {
+            background-color: $primary-color-dark;
+            color: $white-dm;
+            border-color: $white-dm;
+    
+            &::placeholder {
+                color: $white-dm;
+            }
+    
+            &:focus {
+                color: $white-dm;
+                border-color: $white-dm;
+            }
+        }
+    
+        i {
+            color: $white-dm;
+        }
+    }
+
+    /* Mode Switch */
+    .colorMode-switch {
+        &-label {
+            color: $white-dm;
+        }
+    }
+
+    /* Today's Weather */
+    .todaysWeather {
+        &-container {
+            background-color: rgba($primary-color-dark, 0.4);
+        }
+    }
+
+    /* Temperature Forecast */
+    .tempForecast {
+        &-container {
+            background-color: rgba($primary-color-dark, 0.4);
+        }
+    }
+}

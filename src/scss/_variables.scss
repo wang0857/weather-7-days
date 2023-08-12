@@ -1,0 +1,40 @@
+
+// Colors
+$white: hsl(0, 0%, 98%);
+$white-dm: hsl(0, 0%, 80%);
+$gray: hsl(0, 0%, 41%);
+$black: hsl(0, 0%, 8%);
+$colors: $white, $gray, $black;
+
+// Colors in Light Mode 
+$primary-color-light: #001B48;
+$secondary-color-light: #6FC2F7;
+$tertiary-color-light: #C2FDFF;
+$dark-bg-light: rgba(#02457A, 0.35);
+$transparent-bg-light: rgba(#01233D, 0);
+
+
+// Colors in Dark Mode
+$primary-color-dark: #001B48;
+$secondary-color-dark: darken(#353A5F, 10%);
+$tertiary-color-dark: #5D6B98;
+$light-bg-dark: rgba(#9EBAF3, 0.6);
+$transparent-bg-dark: rgba(#01233D, 0);
+
+
+// Padding and Margin
+$xs: 5px;
+$sm: 10px;
+$md: 15px;
+$lg: 20px;
+$xlg: 35px;
+
+// Transition
+$transition: all .2s ease-in;
+
+// Box Shadow
+$box-shadow: 0 15px 25px 0 rgba(0,0,0,.3);
+
+// Font Weight
+$semiBold: 600;
+$bold: 700;

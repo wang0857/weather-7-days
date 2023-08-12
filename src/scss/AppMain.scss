@@ -1,0 +1,224 @@
+@import './variables';
+
+
+/* ================== */
+/* Fonts */
+/* ================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap');
+
+body > * {
+    font-family: 'Rubik', sans-serif;
+    color: $primary-color-light;
+    font-size: 18px;
+}
+
+h1, h2, h3 {
+    font-weight: $bold;
+}
+
+h1 {
+    margin: 1em 0em 1.5em;
+}
+
+
+/* ================== */
+/* Background Setting */
+/* ================== */
+
+body {
+    min-height: 100vh;
+    background-image: linear-gradient($secondary-color-light, $tertiary-color-light);
+    background-repeat: no-repeat;
+}
+
+.container {
+    padding: 0em 3em;
+}
+
+
+/* ================== */
+/* Containers */
+/* ================== */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $xlg;
+    margin-bottom: 3em;
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* ================== */
+/* Search Bar */
+/* ================== */
+
+.search-bar {
+    position: relative;
+    margin-bottom: 25px;
+
+    input {
+        background-color: transparent;
+        color: $primary-color-light;
+        border: 2px solid $primary-color-light;
+        border-radius: $lg;
+
+        &::placeholder {
+            color: $primary-color-light;
+        }
+
+        &:focus {
+            background-color: transparent;
+            color: $primary-color-light;
+            border: 2px solid $primary-color-light;
+            border-radius: $lg;
+        }
+    }
+
+    i {
+        position: absolute;
+        top: $sm;
+        right: $lg;
+        color: $primary-color-light;
+        font-size: 18px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+
+/* ================== */
+/* Mode Switch */
+/* ================== */
+
+.colorMode-switch {
+    &-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 1em 3em 0em;
+    }
+
+    &-input {
+        position: relative;
+        
+        input {
+            border: none;
+            background-color: $primary-color-light;
+            background-image: url('../assets/dark-mode.svg') !important;
+            height: 42px;
+            width: 98px !important;
+            margin: 0px !important;
+
+            &:checked {
+                border: 1px solid $white-dm;
+                background-color: $primary-color-light;
+                background-image: url('../assets/light-mode.svg') !important;
+            }
+            
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+    }
+
+    &-label {
+        position: absolute;
+        top: 7px;
+        color: $white;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+
+/* ================== */
+/* Today's Weather */
+/* ================== */
+
+.todaysWeather {
+    &-container {
+        border-radius: 30px;
+        background-color: rgba($white, 0.4);
+        padding: 40px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 370px;
+    }
+
+    &-location {
+        display: flex;
+        align-items: center;
+        gap: $xs;
+        
+        &-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        p {
+            margin: 0px;
+        }
+    }
+
+    &-date {
+        margin: 0px;
+    }
+
+    &-weather {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $md;
+
+        &-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            flex-grow: 1;
+        }
+
+        i {
+            font-size: 130px;
+        }
+
+        h3, p {
+            margin: 0px;
+        }
+
+        h3 {
+            font-size: 2em;
+        }
+    }
+}
+
+
+/* ================== */
+/* Temperature Forecast */
+/* ================== */
+
+.tempForecast {
+    &-container {
+        border-radius: 30px;
+        background-color: rgba($white, 0.4);
+        padding: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 370px;
+    }
+}
