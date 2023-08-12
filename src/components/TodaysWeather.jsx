@@ -7,7 +7,7 @@ function TodaysWeather({location}) {
     const [todaysWeather, setTodaysWeather] = useState({})
 
     useEffect(() => {
-        fetch(`http://www.7timer.info/bin/api.pl?lon=${location.longt}&lat=${location.latt}&product=civillight&output=json`)
+        fetch(`https://www.7timer.info/bin/api.pl?lon=${location.longt}&lat=${location.latt}&product=civillight&output=json`)
         .then(res => res.json())
         .then(data => setTodaysWeather(data.dataseries[0]))
     }, [location])

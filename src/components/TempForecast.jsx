@@ -112,7 +112,7 @@ function TempForecast({location, darkMode}) {
 
     // Get weather in 7 days
     useEffect(() => {
-        fetch(`http://www.7timer.info/bin/api.pl?lon=${location.longt}&lat=${location.latt}&product=civillight&output=json`)
+        fetch(`https://www.7timer.info/bin/api.pl?lon=${location.longt}&lat=${location.latt}&product=civillight&output=json`)
         .then(res => res.json())
         .then(data => setSevenWeathers(data.dataseries))
     }, [location])
