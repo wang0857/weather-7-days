@@ -92,13 +92,6 @@ const weathers = [
     },
     {
         'id': 13, 
-        'weather': 'lightsnow',
-        'icon': 'fa-snowflake',
-        'description': 'Light or occasional snow',
-        'unicode': '\uf2dc'
-    },
-    {
-        'id': 14, 
         'weather': 'rainsnow',
         'icon': 'fa-cloud-meatball',
         'description': 'Mixed(Rain + Snow)',
