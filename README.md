@@ -27,9 +27,23 @@ The default theme will be according to your browser theme. If you set your brows
 - [x] Completed the customized style and the function of theme switch.
 - [x] Implemented the Chart.js. Make a Line Chart to address the weathers and temperatures in 7 days.
 - [x] Responsive design. 
+- [x] Added Toast when errors occurred. (Updated on Feb 29, 2024.)
+- [x] Added Spinners when data was processing. (Updated on Feb 29, 2024.)
+- [x] Changed the resources of the Geocode API since the original one's credit reached its limit. (Updated on Feb 29, 2024.)
 
 ---
 
 ## API Resouces
-1. [Geocode.xyz](https://geocode.xyz/api)
+1. ~~[Geocode.xyz](https://geocode.xyz/api)~~ (Credits runs out. Abandoned.)
 2. [7Timer](http://www.7timer.info/doc.php?lang=en#machine_readable_api)
+3. [Geocoding API](https://geocode.maps.co/)
+
+## Plugins / Tools / Libraries
+1. [axios](https://www.npmjs.com/package/axios)
+2. [Chart.js](https://www.chartjs.org/)
+3. [react-chartjs-2](https://react-chartjs-2.js.org/)
+4. [React Spinners](https://www.davidhu.io/react-spinners/)
+5. [React Toastify](https://fkhadra.github.io/react-toastify/introduction/)
+
+## CSS Precessor
+- [Sass](https://sass-lang.com/)

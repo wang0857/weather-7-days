@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-
+import WeatherService from "../services/weather.service";
 import weatherList from '../../weatherList'
 
 import {
@@ -12,8 +12,8 @@ import {
     Legend,
     Filler
 } from 'chart.js'
-
 import { Line } from 'react-chartjs-2';
+import { PacmanLoader } from "react-spinners";
 
 // Activate the ChartJS
 ChartJS.register(
@@ -26,13 +26,13 @@ ChartJS.register(
     Filler
 )
 
-function TempForecast({location, darkMode}) {
+function TempForecast({location, darkMode, isError}) {
     const [sevenWeathers, setSevenWeathers] = useState([])
     const [avgTemp, setAvgTemp] = useState([])
     const [sevenDays, setSevenDays] = useState([])
     const [iconObjs, setIconObjs] = useState([])
     const [dayIcons, setDayIcons] = useState([])
-    const [width, setWidth] = useState('')
+    const [isLoading, setIsLoading] = useState(false);
     
     // Line Chart
     
@@ -113,9 +113,14 @@ function TempForecast({location, darkMode}) {
 
     // Get weather in 7 days
     useEffect(() => {
-        fetch(`https://www.7timer.info/bin/api.pl?lon=${location.longt}&lat=${location.latt}&product=civillight&output=json`)
-        .then(res => res.json())
-        .then(data => setSevenWeathers(data.dataseries))
+        setIsLoading(true)
+        // fetch(`https://www.7timer.info/bin/api.pl?lon=${location.longt}&lat=${location.latt}&product=civillight&output=json`)
+        // .then(res => res.json())
+        // .then(data => setSevenWeathers(data.dataseries))
+        WeatherService.get(location).then(data => {
+            setSevenWeathers(data.data.dataseries)
+            setIsLoading(false)
+        })
     }, [location])
 
     // Set the 7 days and the average temperatures
@@ -149,20 +154,29 @@ function TempForecast({location, darkMode}) {
         )
     }, [sevenWeathers])
 
-    useEffect(() => {
-        const forecastContainer = document.querySelector('.tempForecast-container')
-        setWidth(forecastContainer.offsetWidth)
-    }, [])
-    
 
     return (
         <div className="tempForecast-container">
-            <div className="tempForecast-container-lineChart">
-                <Line
-                    data={data}
-                    options={options}
-                />
-            </div>
+            {isLoading ?
+                <PacmanLoader
+                    color={darkMode ? 'hsl(0, 0%, 80%)' : '#001B48'}
+                    loading={isLoading}
+                    size={20}
+                    aria-label="Loading Spinner"
+                    data-testid="loader"
+                /> :
+                isError ? 
+                <div className="d-flex flex-column align-items-center">
+                    <i className="fa-solid fa-face-dizzy fs-2"></i>
+                    <p className="mt-3 text-center"> Starving... Feed me data.</p>
+                </div> :
+                <div className="tempForecast-container-lineChart">
+                    <Line
+                        data={data}
+                        options={options}
+                    />
+                </div>
+            }
         </div>
     )
 }

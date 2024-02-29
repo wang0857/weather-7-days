@@ -53,4 +53,19 @@ body.dark {
             background-color: rgba($primary-color-dark, 0.4);
         }
     }
+
+    /* Toastify */
+    .toast {
+        &-container {
+            background-color: $primary-color-dark;
+        }
+
+        &-body {
+            color: $white-dm;
+        }
+
+        &-progressBar {
+            background-color: #9EBAF3;
+        }
+    }
 }

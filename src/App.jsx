@@ -12,6 +12,7 @@ function App() {
     window.matchMedia("(prefers-color-scheme: dark)").matches
   )
   const [location, setLocation] = useState({});
+  const [isError, setIsError] = useState(false);
 
   function changeMode(mode) {
     setDarkMode(mode)
@@ -32,9 +33,15 @@ function App() {
   }, [darkMode])
 
 
+  // Examine the location
+  function checkIsError(isError) {
+    setIsError(isError)
+  }
+
+
   return (
     <>
-    <ColorModeSwitch darkMode={darkMode} changeMode={changeMode}/>
+    <ColorModeSwitch darkMode={darkMode} changeMode={changeMode} />
     <div className="container">
       <h1 className="text-center">Weather in 7 Days</h1>
 
@@ -42,11 +49,20 @@ function App() {
       <div className="grid-container">
           <div>
             <h2 className="text-center text-md-start">Today's Weather</h2>
-            <TodaysWeather location={location} />
+            <TodaysWeather
+              location={location}
+              darkMode={darkMode}
+              isError={isError}
+              checkIsError={checkIsError}
+            />
           </div>
           <div>
             <h2 className="text-center text-md-start">Avg. Temperature Forecast in 7 days</h2>
-            <TempForecast location={location} darkMode={darkMode} />
+            <TempForecast
+              location={location}
+              darkMode={darkMode}
+              isError={isError}
+            />
           </div>
       </div>
     </div>

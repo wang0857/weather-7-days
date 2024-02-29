@@ -52,6 +52,12 @@ body {
     .grid-container {
         grid-template-columns: 1fr 1fr;
     }
+
+    .toast {
+        &-container {
+            width: 1000px;
+        }
+    }
 }
 
 
@@ -154,6 +160,7 @@ body {
         padding: 40px;
         display: flex;
         justify-content: center;
+        align-items: center;
         flex-direction: column;
         height: 370px;
     }
@@ -167,6 +174,7 @@ body {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 100%;
         }
 
         p {
@@ -241,5 +249,29 @@ body {
             justify-content: flex-start;
             min-width: 580px;
         }
+    }
+}
+
+
+/* ================== */
+/* Toastify */
+/* ================== */
+
+.toast {
+    &-container {
+        background-color: $primary-color-light;
+        border-radius: $md;
+        width: 300px;
+        margin-top: $sm;
+    }
+
+    &-body {
+        font-family: 'Rubik', sans-serif;
+        color: $secondary-color-light;
+        font-size: 20px;
+    }
+
+    &-progressBar {
+        background-color: $secondary-color-light;
     }
 }
